@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- ============================================================
+     EASY UPDATE ZONE — EDIT ONLY THESE NUMBERS WHEN YOUR STATS CHANGE
+     Example: goals: 10 means your website will show 10 goals.
+     Goal Contributions and G/A per Appearance update automatically.
+     ============================================================ -->
+<script>
+const PLAYER_STATS = {
+  appearances: 19,
+  goals: 9,
+  assists: 13,
+  motm: 2
+};
+
+const PLAYER_ATTRIBUTES = {
+  dribbling: 90,
+  ballControl: 87,
+  passing: 89,
+  vision: 94,
+  creativity: 87,
+  oneVOne: 95,
+  crossing: 85,
+  finishing: 79
+};
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Zyden Pereira — RW / CM footballer for Unido FC and Lourdes High School U-16.">
@@ -36,17 +60,18 @@ section{padding:90px 7%}.section-head{display:flex;align-items:end;justify-conte
 .journey{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.journey .card{min-height:145px}.year{color:var(--lime);font-size:12px;font-weight:900;letter-spacing:2px}.journey h3{font-size:19px;margin:10px 0 4px}.journey p{font-size:12px;color:var(--muted)}
 .contact{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:38px;border:1px solid #38432c;border-radius:20px;background:linear-gradient(135deg,#12170c,#0b0d0b)}.insta{color:var(--lime);font-weight:950;font-size:20px}
 footer{text-align:center;padding:35px 7%;border-top:1px solid var(--line);color:#73786f;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.attributes{display:grid;grid-template-columns:1fr 1fr;gap:14px}.attribute-card{background:var(--panel);border:1px solid var(--line);padding:20px 22px;border-radius:14px}.attribute-top{display:flex;align-items:center;justify-content:space-between;gap:14px}.attribute-name{display:flex;align-items:center;gap:11px;font-weight:900;text-transform:uppercase;font-size:13px;letter-spacing:.7px}.attribute-icon{font-size:21px;line-height:1}.attribute-rating{font-size:28px;font-weight:950;color:var(--lime)}.attribute-bar{height:6px;background:#20241f;border-radius:99px;overflow:hidden;margin-top:13px}.attribute-fill{height:100%;width:0;background:var(--lime);border-radius:99px;transition:width .8s ease}.playstyle-box{margin-top:26px;padding:24px;border:1px solid #38432c;border-radius:16px;background:linear-gradient(135deg,#11160c,#0b0d0b)}.playstyle-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.playstyle-item{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#0b0d0b}.playstyle-icon{width:92px;height:92px;flex:0 0 92px;border-radius:14px;object-fit:cover;border:1px solid #38432c;background:#080a08}.playstyle-item strong{display:block;font-size:13px;text-transform:uppercase}.playstyle-item span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
 @media(max-width:800px){
- .links{display:none}.hero{min-height:900px;align-items:flex-end;padding-bottom:70px}.hero:before{background:linear-gradient(0deg,rgba(0,0,0,.96) 5%,rgba(0,0,0,.62) 45%,rgba(0,0,0,.12) 100%),url("hero.jpg") 62% center/cover no-repeat}.side-number{right:5%;top:22%;bottom:auto;font-size:110px}.bar{grid-template-columns:1fr;gap:16px;margin:-1px 5% 0}.divider{width:100%;height:1px}.stats{grid-template-columns:1fr 1fr}.profile{grid-template-columns:1fr}.journey{grid-template-columns:1fr 1fr}.name{letter-spacing:-4px}
+ .links{display:none}.hero{min-height:900px;align-items:flex-end;padding-bottom:70px}.hero:before{background:linear-gradient(0deg,rgba(0,0,0,.96) 5%,rgba(0,0,0,.62) 45%,rgba(0,0,0,.12) 100%),url("hero.jpg") 62% center/cover no-repeat}.side-number{right:5%;top:22%;bottom:auto;font-size:110px}.bar{grid-template-columns:1fr;gap:16px;margin:-1px 5% 0}.divider{width:100%;height:1px}.stats{grid-template-columns:1fr 1fr}.profile{grid-template-columns:1fr}.journey{grid-template-columns:1fr 1fr}.attributes{grid-template-columns:1fr}.name{letter-spacing:-4px}
 }
-@media(max-width:480px){.stats,.journey{grid-template-columns:1fr}.section-head{display:block}.lead{margin-top:12px}.contact{display:block}.contact .cta{margin-top:20px}}
+@media(max-width:480px){.stats,.journey{grid-template-columns:1fr}.playstyle-grid{grid-template-columns:1fr}.section-head{display:block}.lead{margin-top:12px}.contact{display:block}.contact .cta{margin-top:20px}}
 </style>
 </head>
 <body>
 <nav class="nav">
   <a class="logo" href="#">Z<span>P</span><b>.</b></a>
   <div class="links">
-    <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#stats">Stats</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+    <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#stats">Stats</a><a href="#attributes">Attributes</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
   </div>
   <div class="icons"><a href="https://www.instagram.com/itss.zydxn/" target="_blank" aria-label="Instagram">◎</a><a href="#contact" aria-label="Contact">✉</a></div>
 </nav>
@@ -93,17 +118,38 @@ footer{text-align:center;padding:35px 7%;border-top:1px solid var(--line);color:
 <section id="stats">
   <div class="section-head"><div><div class="eyebrow">02 / Performance</div><h2 class="title">2026/27 Stats</h2></div><p class="lead">Current-season record • Youth Leagues</p></div>
   <div class="stats">
-    <div class="stat"><div class="num">19</div><div class="label">Appearances</div></div>
-    <div class="stat"><div class="num">9</div><div class="label">Goals</div></div>
-    <div class="stat"><div class="num">13</div><div class="label">Assists</div></div>
-    <div class="stat"><div class="num">22</div><div class="label">Goal Contributions</div></div>
-    <div class="stat"><div class="num">2</div><div class="label">MOTM</div></div>
+    <div class="stat"><div class="num" data-stat="appearances">19</div><div class="label">Appearances</div></div>
+    <div class="stat"><div class="num" data-stat="goals">9</div><div class="label">Goals</div></div>
+    <div class="stat"><div class="num" data-stat="assists">13</div><div class="label">Assists</div></div>
+    <div class="stat"><div class="num" data-stat="contributions">22</div><div class="label">Goal Contributions</div></div>
+    <div class="stat"><div class="num" data-stat="motm">2</div><div class="label">MOTM</div></div>
     <div class="stat"><div class="num">1.16</div><div class="label">G/A per Appearance</div></div>
   </div>
 </section>
 
+<section id="attributes">
+  <div class="section-head"><div><div class="eyebrow">03 / Player Rating</div><h2 class="title">Attributes</h2></div><p class="lead">Personal player ratings • /100</p></div>
+  <div class="attributes">
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🪄</span>Dribbling</div><div class="attribute-rating" data-attr="dribbling">90</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="dribbling"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🎮</span>Ball Control</div><div class="attribute-rating" data-attr="ballControl">87</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="ballControl"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🎯</span>Passing</div><div class="attribute-rating" data-attr="passing">89</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="passing"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">👁️</span>Vision</div><div class="attribute-rating" data-attr="vision">94</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="vision"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🎨</span>Creativity</div><div class="attribute-rating" data-attr="creativity">87</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="creativity"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">⚡</span>1v1 Ability</div><div class="attribute-rating" data-attr="oneVOne">95</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="oneVOne"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🏹</span>Crossing</div><div class="attribute-rating" data-attr="crossing">85</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="crossing"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🥅</span>Finishing</div><div class="attribute-rating" data-attr="finishing">79</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="finishing"></div></div></div>
+  </div>
+  <div class="playstyle-box">
+    <div class="eyebrow">Playstyle</div>
+    <div class="playstyle-grid">
+      <div class="playstyle-item"><img class="playstyle-icon" src="playstyle_nutmeg.png" alt="Nutmeg Expert playstyle badge"><div><strong>Nutmeg Expert</strong><span>Looks for the perfect nutmeg.</span></div></div>
+      <div class="playstyle-item"><img class="playstyle-icon" src="playstyle_trickster.png" alt="Trickster playstyle badge"><div><strong>Trickster</strong><span>Uses skills, feints and tricks to beat defenders.</span></div></div>
+    </div>
+  </div>
+</section>
+
 <section id="journey">
-  <div class="section-head"><div><div class="eyebrow">03 / Experience</div><h2 class="title">Journey</h2></div><p class="lead">Competitions and football experience.</p></div>
+  <div class="section-head"><div><div class="eyebrow">04 / Experience</div><h2 class="title">Journey</h2></div><p class="lead">Competitions and football experience.</p></div>
   <div class="journey">
     <div class="card"><div class="year">CLUB</div><h3>Unido FC</h3><p>Current club • #25</p></div>
     <div class="card"><div class="year">SCHOOL</div><h3>Lourdes U-16</h3><p>Lourdes High School team</p></div>
@@ -114,11 +160,36 @@ footer{text-align:center;padding:35px 7%;border-top:1px solid var(--line);color:
 
 <section id="contact">
   <div class="contact">
-    <div><div class="eyebrow">04 / Connect</div><h2 class="title" style="margin-top:7px">Follow The Journey.</h2><p class="lead" style="margin-top:10px">Match updates, football content and future highlights.</p></div>
+    <div><div class="eyebrow">05 / Connect</div><h2 class="title" style="margin-top:7px">Follow The Journey.</h2><p class="lead" style="margin-top:10px">Match updates, football content and future highlights.</p></div>
     <a class="cta" href="https://www.instagram.com/itss.zydxn/" target="_blank">Instagram @itss.zydxn ↗</a>
   </div>
 </section>
 
 <footer>ZYDEN PEREIRA • FOOTBALL PLAYER PROFILE • 2026/27</footer>
+
+<script>
+// DO NOT EDIT BELOW — this keeps the attribute ratings synced with PLAYER_ATTRIBUTES above.
+(() => {
+  Object.entries(PLAYER_ATTRIBUTES).forEach(([key, value]) => {
+    document.querySelectorAll(`[data-attr="${key}"]`).forEach(el => el.textContent = value);
+    document.querySelectorAll(`[data-fill="${key}"]`).forEach(el => el.style.width = `${Math.max(0, Math.min(100, value))}%`);
+  });
+})();
+
+// DO NOT EDIT BELOW — this keeps the visible stats synced with PLAYER_STATS above.
+(() => {
+  const s = PLAYER_STATS;
+  const values = {
+    appearances: s.appearances,
+    goals: s.goals,
+    assists: s.assists,
+    contributions: s.goals + s.assists,
+    motm: s.motm
+  };
+  Object.entries(values).forEach(([key, value]) => {
+    document.querySelectorAll(`[data-stat="${key}"]`).forEach(el => el.textContent = value);
+  });
+})();
+</script>
 </body>
 </html>
