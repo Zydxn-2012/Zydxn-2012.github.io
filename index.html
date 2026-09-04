@@ -15,14 +15,22 @@ const PLAYER_STATS = {
 };
 
 const PLAYER_ATTRIBUTES = {
-  dribbling: 90,
-  ballControl: 87,
-  passing: 89,
-  vision: 94,
-  creativity: 87,
-  oneVOne: 95,
-  crossing: 85,
-  finishing: 79
+  dribbling: 94,
+  ballControl: 91,
+  passing: 92,
+  vision: 95,
+  creativity: 91,
+  oneVOne: 97,
+  crossing: 88,
+  finishing: 80
+};
+
+const PLAYER_CARD = {
+  position: "RW",
+  overall: Math.round(Object.values(PLAYER_ATTRIBUTES).reduce((a,b) => a + b, 0) / Object.values(PLAYER_ATTRIBUTES).length),
+  foot: "RIGHT",
+  club: "UNIDO FC",
+  number: 25
 };
 </script>
 <meta charset="UTF-8">
@@ -61,7 +69,7 @@ section{padding:90px 7%}.section-head{display:flex;align-items:end;justify-conte
 .contact{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:38px;border:1px solid #38432c;border-radius:20px;background:linear-gradient(135deg,#12170c,#0b0d0b)}.insta{color:var(--lime);font-weight:950;font-size:20px}
 footer{text-align:center;padding:35px 7%;border-top:1px solid var(--line);color:#73786f;font-size:11px;letter-spacing:2px;text-transform:uppercase}
 .attributes{display:grid;grid-template-columns:1fr 1fr;gap:14px}.attribute-card{background:var(--panel);border:1px solid var(--line);padding:20px 22px;border-radius:14px}.attribute-top{display:flex;align-items:center;justify-content:space-between;gap:14px}.attribute-name{display:flex;align-items:center;gap:11px;font-weight:900;text-transform:uppercase;font-size:13px;letter-spacing:.7px}.attribute-icon{font-size:21px;line-height:1}.attribute-rating{font-size:28px;font-weight:950;color:var(--lime)}.attribute-bar{height:6px;background:#20241f;border-radius:99px;overflow:hidden;margin-top:13px}.attribute-fill{height:100%;width:0;background:var(--lime);border-radius:99px;transition:width .8s ease}.playstyle-box{margin-top:26px;padding:24px;border:1px solid #38432c;border-radius:16px;background:linear-gradient(135deg,#11160c,#0b0d0b)}.playstyle-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.playstyle-item{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#0b0d0b}.playstyle-icon{width:92px;height:92px;flex:0 0 92px;border-radius:14px;object-fit:cover;border:1px solid #38432c;background:#080a08}.playstyle-item strong{display:block;font-size:13px;text-transform:uppercase}.playstyle-item span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
-@media(max-width:800px){
+.player-card-section{background:radial-gradient(circle at 50% 10%,#1a220c 0%,#080a08 42%,#070807 100%);position:relative;overflow:hidden}.player-card-wrap{display:flex;justify-content:center;padding:12px 0 10px}.player-card{position:relative;width:min(390px,92vw);aspect-ratio:.72;overflow:hidden;border:1px solid #6f7e2d;border-radius:20px;background:#11150d;box-shadow:0 24px 70px #000b,0 0 45px #c8ff0014}.player-card:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#c8ff0022,#0000 28%,#0008 68%,#000 100%),url("hero.jpg") center 30%/cover no-repeat;filter:saturate(.85)}.player-card:after{content:"";position:absolute;inset:0;border:2px solid #c8ff0040;border-radius:20px;pointer-events:none}.pc-content{position:absolute;inset:0;z-index:2;padding:25px 24px;display:flex;flex-direction:column;justify-content:space-between}.pc-top{display:flex;justify-content:space-between;align-items:flex-start}.pc-ovr{font-size:64px;line-height:.8;font-weight:950;color:#c8ff00;text-shadow:0 4px 20px #000}.pc-pos{font-size:18px;font-weight:950;letter-spacing:2px;text-transform:uppercase}.pc-foot{font-size:10px;color:#d6d9d0;letter-spacing:2px;margin-top:6px}.pc-mid{padding-top:130px}.pc-name{font-size:39px;line-height:.95;font-weight:950;text-transform:uppercase;letter-spacing:-1.5px}.pc-role{font-size:11px;letter-spacing:2px;color:#c8ff00;font-weight:900;margin-top:8px}.pc-bottom{border-top:1px solid #c8ff0045;padding-top:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}.pc-stat{text-align:center}.pc-stat strong{display:block;font-size:20px;color:#f3f4ef}.pc-stat span{font-size:9px;color:#9b9f96;letter-spacing:1.2px;text-transform:uppercase}.pc-club{margin-top:13px;display:flex;justify-content:space-between;align-items:end}.pc-club-name{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.pc-number{font-size:30px;font-weight:950;color:#c8ff00;line-height:.8}.pc-note{text-align:center;color:#73786f;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-top:14px}.@media(max-width:800px){
  .links{display:none}.hero{min-height:900px;align-items:flex-end;padding-bottom:70px}.hero:before{background:linear-gradient(0deg,rgba(0,0,0,.96) 5%,rgba(0,0,0,.62) 45%,rgba(0,0,0,.12) 100%),url("hero.jpg") 62% center/cover no-repeat}.side-number{right:5%;top:22%;bottom:auto;font-size:110px}.bar{grid-template-columns:1fr;gap:16px;margin:-1px 5% 0}.divider{width:100%;height:1px}.stats{grid-template-columns:1fr 1fr}.profile{grid-template-columns:1fr}.journey{grid-template-columns:1fr 1fr}.attributes{grid-template-columns:1fr}.name{letter-spacing:-4px}
 }
 @media(max-width:480px){.stats,.journey{grid-template-columns:1fr}.playstyle-grid{grid-template-columns:1fr}.section-head{display:block}.lead{margin-top:12px}.contact{display:block}.contact .cta{margin-top:20px}}
@@ -71,7 +79,7 @@ footer{text-align:center;padding:35px 7%;border-top:1px solid var(--line);color:
 <nav class="nav">
   <a class="logo" href="#">Z<span>P</span><b>.</b></a>
   <div class="links">
-    <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#stats">Stats</a><a href="#attributes">Attributes</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+    <a class="active" href="#home">Home</a><a href="#about">About</a><a href="#stats">Stats</a><a href="#attributes">Attributes</a><a href="#player-card">Player Card</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
   </div>
   <div class="icons"><a href="https://www.instagram.com/itss.zydxn/" target="_blank" aria-label="Instagram">◎</a><a href="#contact" aria-label="Contact">✉</a></div>
 </nav>
@@ -130,14 +138,14 @@ footer{text-align:center;padding:35px 7%;border-top:1px solid var(--line);color:
 <section id="attributes">
   <div class="section-head"><div><div class="eyebrow">03 / Player Rating</div><h2 class="title">Attributes</h2></div><p class="lead">Personal player ratings • /100</p></div>
   <div class="attributes">
-    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🪄</span>Dribbling</div><div class="attribute-rating" data-attr="dribbling">90</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="dribbling"></div></div></div>
-    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🎮</span>Ball Control</div><div class="attribute-rating" data-attr="ballControl">87</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="ballControl"></div></div></div>
-    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🎯</span>Passing</div><div class="attribute-rating" data-attr="passing">89</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="passing"></div></div></div>
-    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">👁️</span>Vision</div><div class="attribute-rating" data-attr="vision">94</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="vision"></div></div></div>
-    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🎨</span>Creativity</div><div class="attribute-rating" data-attr="creativity">87</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="creativity"></div></div></div>
-    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">⚡</span>1v1 Ability</div><div class="attribute-rating" data-attr="oneVOne">95</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="oneVOne"></div></div></div>
-    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🏹</span>Crossing</div><div class="attribute-rating" data-attr="crossing">85</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="crossing"></div></div></div>
-    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🥅</span>Finishing</div><div class="attribute-rating" data-attr="finishing">79</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="finishing"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🪄</span>Dribbling</div><div class="attribute-rating" data-attr="dribbling">94</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="dribbling"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🎮</span>Ball Control</div><div class="attribute-rating" data-attr="ballControl">91</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="ballControl"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🎯</span>Passing</div><div class="attribute-rating" data-attr="passing">92</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="passing"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">👁️</span>Vision</div><div class="attribute-rating" data-attr="vision">95</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="vision"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🎨</span>Creativity</div><div class="attribute-rating" data-attr="creativity">91</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="creativity"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">⚡</span>1v1 Ability</div><div class="attribute-rating" data-attr="oneVOne">97</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="oneVOne"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🏹</span>Crossing</div><div class="attribute-rating" data-attr="crossing">88</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="crossing"></div></div></div>
+    <div class="attribute-card"><div class="attribute-top"><div class="attribute-name"><span class="attribute-icon">🥅</span>Finishing</div><div class="attribute-rating" data-attr="finishing">80</div></div><div class="attribute-bar"><div class="attribute-fill" data-fill="finishing"></div></div></div>
   </div>
   <div class="playstyle-box">
     <div class="eyebrow">Playstyle</div>
@@ -148,8 +156,10 @@ footer{text-align:center;padding:35px 7%;border-top:1px solid var(--line);color:
   </div>
 </section>
 
+<section id="player-card" class="player-card-section"><div class="section-head"><div><div class="eyebrow">04 / Player Card</div><h2 class="title">Player Card</h2></div><p class="lead">My football profile • overall rating calculated from attributes.</p></div><div class="player-card-wrap"><div class="player-card"><div class="pc-content"><div class="pc-top"><div><div class="pc-ovr" id="card-ovr">91</div><div class="pc-pos" id="card-position">RW</div><div class="pc-foot" id="card-foot">RIGHT FOOTED</div></div><div class="pc-number" id="card-number">#25</div></div><div class="pc-mid"><div class="pc-name">Zyden Pereira</div><div class="pc-role">RW / CM • CREATIVE ATTACKER</div></div><div><div class="pc-bottom"><div class="pc-stat"><strong data-card-stat="dribbling">90</strong><span>Dribbling</span></div><div class="pc-stat"><strong data-card-stat="passing">89</strong><span>Passing</span></div><div class="pc-stat"><strong data-card-stat="vision">94</strong><span>Vision</span></div></div><div class="pc-club"><div class="pc-club-name">Unido FC</div><div class="pc-number">25</div></div></div></div></div><div class="pc-note">Personal player rating • not an official game rating</div></section>
+
 <section id="journey">
-  <div class="section-head"><div><div class="eyebrow">04 / Experience</div><h2 class="title">Journey</h2></div><p class="lead">Competitions and football experience.</p></div>
+  <div class="section-head"><div><div class="eyebrow">05 / Experience</div><h2 class="title">Journey</h2></div><p class="lead">Competitions and football experience.</p></div>
   <div class="journey">
     <div class="card"><div class="year">CLUB</div><h3>Unido FC</h3><p>Current club • #25</p></div>
     <div class="card"><div class="year">SCHOOL</div><h3>Lourdes U-16</h3><p>Lourdes High School team</p></div>
@@ -160,7 +170,7 @@ footer{text-align:center;padding:35px 7%;border-top:1px solid var(--line);color:
 
 <section id="contact">
   <div class="contact">
-    <div><div class="eyebrow">05 / Connect</div><h2 class="title" style="margin-top:7px">Follow The Journey.</h2><p class="lead" style="margin-top:10px">Match updates, football content and future highlights.</p></div>
+    <div><div class="eyebrow">06 / Connect</div><h2 class="title" style="margin-top:7px">Follow The Journey.</h2><p class="lead" style="margin-top:10px">Match updates, football content and future highlights.</p></div>
     <a class="cta" href="https://www.instagram.com/itss.zydxn/" target="_blank">Instagram @itss.zydxn ↗</a>
   </div>
 </section>
@@ -173,6 +183,17 @@ footer{text-align:center;padding:35px 7%;border-top:1px solid var(--line);color:
   Object.entries(PLAYER_ATTRIBUTES).forEach(([key, value]) => {
     document.querySelectorAll(`[data-attr="${key}"]`).forEach(el => el.textContent = value);
     document.querySelectorAll(`[data-fill="${key}"]`).forEach(el => el.style.width = `${Math.max(0, Math.min(100, value))}%`);
+  });
+})();
+
+// Player card sync — overall rating is calculated from the attributes above.
+(() => {
+  document.getElementById("card-ovr").textContent = PLAYER_CARD.overall;
+  document.getElementById("card-position").textContent = PLAYER_CARD.position;
+  document.getElementById("card-foot").textContent = PLAYER_CARD.foot + " FOOTED";
+  document.getElementById("card-number").textContent = "#" + PLAYER_CARD.number;
+  ["dribbling","passing","vision"].forEach(key => {
+    document.querySelectorAll(`[data-card-stat="${key}"]`).forEach(el => el.textContent = PLAYER_ATTRIBUTES[key]);
   });
 })();
 
